@@ -1,0 +1,4 @@
+{
+  "roomId": "{{ your room ID here }}",
+  "text": "This is being sent from pyATS. The device {{ to_parse_version.hostname }}, a {{ to_parse_version.platform }}, is a {{ to_parse_version.chassis }} running {{ to_parse_version.os }} version {{ to_parse_version.version }} using image {{ to_parse_version.image_id }}. The device has been up for {{ to_parse_version.uptime | replace(","," ") }} and was last reboot on {{ to_parse_version.system_restarted_at | replace(","," ") }} because {{ to_parse_version.last_reload_reason | replace("\"","") | replace(","," ") }}. It has the following interfaces {{ to_parse_version.number_of_intfs | replace("{","") | replace("}","") | replace(","," ") }}. Of the total {{ to_parse_version.main_mem }} {{ to_parse_version.mem_size | replace("{","") | replace("}","") | replace(","," ") }} is being used. The serial number is {{ to_parse_version.chassis_sn }} with a {{ to_parse_version.license_type }} license"
+}

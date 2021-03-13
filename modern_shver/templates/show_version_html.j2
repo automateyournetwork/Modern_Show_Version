@@ -1,0 +1,37 @@
+<html><body>
+<h1>Show Interfaces Status for 3850</h1>
+<table style="width:100%">
+  <tr>
+    <th>Hostname</th>
+    <th>Platform</th>
+    <th>Chassis</th>
+    <th>Version</th>
+    <th>Image ID</th>
+    <th>OS</th>   
+    <th>Uptime</th>
+    <th>Last Reload</th>
+    <th>Last Reload Reason</th>
+    <th>Interfaces</th>
+    <th>Total Memory</th>
+    <th>Used Memory</th>
+    <th>Serial Number</th>
+    <th>License Type</th>
+  </tr>
+  <tr>
+    <td>{{ to_parse_version.hostname }}</td>
+    <td>{{ to_parse_version.platform }}</td>
+    <td>{{ to_parse_version.chassis }}</td>
+    <td>{{ to_parse_version.version }}</td>
+    <td>{{ to_parse_version.image_id }}</td>
+    <td>{{ to_parse_version.os }}</td>   
+    <td>{{ to_parse_version.uptime }}</td>
+    <td>{{ to_parse_version.system_restarted_at }}</td>
+    <td>{{ to_parse_version.last_reload_reason }}</td>
+    <td>{{ to_parse_version.number_of_intfs | replace("{","") | replace("}","") }}</td>
+    <td>{{ to_parse_version.main_mem }}</td>
+    <td>{{ to_parse_version.mem_size | replace("{","") | replace("}","") }}</td>
+    <td>{{ to_parse_version.chassis_sn }}</td>
+    <td>{{ to_parse_version.license_type }}</td>
+  </tr>
+</table>
+</body></html>
