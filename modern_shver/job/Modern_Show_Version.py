@@ -14,6 +14,7 @@ import json
 import requests
 import base64
 from google.cloud import texttospeech
+from twilio.rest import Client
 
 # ----------------
 # Jinja2
@@ -124,7 +125,6 @@ google_voice_english_synthesis_input = texttospeech.SynthesisInput(text=output_f
 google_voice_french_synthesis_input = texttospeech.SynthesisInput(text=output_from_parsed_google_tts_fr_template)
 google_voice_greek_synthesis_input = texttospeech.SynthesisInput(text=output_from_parsed_google_tts_greek_template)
 
-
 # ----------------
 # Build the voice request, select the language code ("en-US") and the ssml
 # voice gender ("neutral")
@@ -176,3 +176,26 @@ with open("../output/show_version_google_tts_fr.mp3", "wb") as out:
 with open("../output/show_version_google_tts_greek.mp3", "wb") as out:
     # Write the response to the output file.
     out.write(greek_response.audio_content)    
+
+# ---------------------------------------
+# #phonebots
+# ---------------------------------------
+
+# ---------------------------------------
+# Twilio
+# ---------------------------------------
+
+# ---------------------------------------
+# Your Account Sid and Auth Token from twilio.com/console
+# and set the environment variables. See http://twil.io/secure
+# ---------------------------------------
+account_sid = "{{ account SID }}"
+auth_token = "{{ token }}"
+
+client = Client(account_sid, auth_token)
+
+call = client.calls.create(
+                        url='{{ MP3 File location }}',
+                        to='{{ number to call }}',
+                        from_='{{ number calling from }}'
+                    )

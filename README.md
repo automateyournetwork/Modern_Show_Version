@@ -133,6 +133,23 @@ You need to save this JSON file somewhere on the host running the Python and set
 export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
 ```
 
+#### Twilio
+
+Follow the brief introduction to Twilio
+
+https://www.twilio.com/docs/libraries/python
+
+Update the Python with your Account SID and Account Token
+
+account_sid = "{{ account SID }}"
+auth_token = "{{ token }}"
+
+Also then update the URL to your MP3 file, the number to call, and the number you are calling from. You first need to register these numbers if you are using the Twilio trial 
+
+call = client.calls.create(
+                        url='{{ MP3 File location }}',
+                        to='{{ number to call }}',
+                        from_='{{ number calling from }}'
 ##### Output Files
 
 Review your output files. You should have 3 files in the output folder:
