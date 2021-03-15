@@ -2,6 +2,8 @@
 
 Cisco IOS-XE Show Version Command Reimagined as a pyATS job that creates CSV / MD / HTML; sends #chatbot messages; and generates MP3 using Google Cloud TTS #voice
 
+This code takes the original idea of a modern show interface status and then adds #chatbots, #voicebots, and even #dialbots to finish the modernization. <https://developer.cisco.com/codeexchange/github/repo/automateyournetwork/Modern_Show_Interfaces_Status>
+
 ## Simply a better way to run the show version command on IOS-XE Devices
 
 Install pyATS
@@ -71,6 +73,10 @@ In the Jinja2 template also update your roomId
   "text": "This is being sent from pyATS..."
 }
 
+This is an example of the show version command sending a message to the #pyATS WebEx Community:
+
+![WebEx](webex.PNG)
+
 #### Discord #chatbot
 
 Follow this guide to setup your bot
@@ -91,6 +97,8 @@ Discord Webhook Reference
 
 <https://discord.com/developers/docs/resources/webhook>
 
+![Discord](discord.PNG)
+
 #### Slack #chatbot
 
 Follow this guide to setup your Slackbot
@@ -109,6 +117,7 @@ slack_response = requests.post('<https://hooks.slack.com/services/>{{ your webho
 
 Replacing {{ your webhook here }} with your Slackbot Webhook
 
+![Slack](slack.PNG)
 #### Google Cloud Text-to-Speech (TTS) #voicebot
 
 Follow the brief introduction guide to the TTS service
@@ -137,19 +146,20 @@ export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
 
 Follow the brief introduction to Twilio
 
-https://www.twilio.com/docs/libraries/python
+<https://www.twilio.com/docs/libraries/python>
 
 Update the Python with your Account SID and Account Token
 
 account_sid = "{{ account SID }}"
 auth_token = "{{ token }}"
 
-Also then update the URL to your MP3 file, the number to call, and the number you are calling from. You first need to register these numbers if you are using the Twilio trial 
+Also then update the URL to your MP3 file, the number to call, and the number you are calling from. You first need to register these numbers if you are using the Twilio trial
 
 call = client.calls.create(
                         url='{{ MP3 File location }}',
                         to='{{ number to call }}',
                         from_='{{ number calling from }}'
+
 ##### Output Files
 
 Review your output files. You should have 3 files in the output folder:
