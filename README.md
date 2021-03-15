@@ -1,3 +1,5 @@
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/automateyournetwork/Modern_Show_Version)
+
 # Modern_Show_Version
 
 Cisco IOS-XE Show Version Command Reimagined as a pyATS job that creates CSV / MD / HTML; sends #chatbot messages; and generates MP3 using Google Cloud TTS #voice
